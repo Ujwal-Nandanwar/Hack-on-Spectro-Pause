@@ -30,7 +30,7 @@ An interactive web app designed to make learning math fun and engaging! This app
     ```bash
     npm install
     ```
-4. Open `MathQuest` in your file manager. After downlaoding the package, open "MathQuest" web Application.
+4. Open the google form and download the zip file. Unzip the zip file and open "MathQuest" folder in file explorer. Run the web application :MathQuest and enjoy the game 😄.
 
 ## 🎮 How to Play:  
 1. Start the quiz and answer the questions displayed.  
