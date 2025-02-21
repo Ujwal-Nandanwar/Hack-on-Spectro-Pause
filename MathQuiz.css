@@ -1,8 +1,9 @@
 /* General Styles */
-body {
+body
+{
     font-family: Arial, sans-serif;
     background-color: #f0f4f8;
-    background-image:url('https://imgs.search.brave.com/ZKDcC69lR2alp0mCy0WfIrqDGxI1kR2BTzw3FE5Iqos/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg2L2Jm/L2Y4Lzg2YmZmOGQ5/NzViZjI5ZWU5MGNk/ZDZmYWI1MThkNGJl/LmpwZw');
+    background-image: url('https://imgs.search.brave.com/ZKDcC69lR2alp0mCy0WfIrqDGxI1kR2BTzw3FE5Iqos/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzg2L2Jm/L2Y4Lzg2YmZmOGQ5/NzViZjI5ZWU5MGNk/ZDZmYWI1MThkNGJl/LmpwZw');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,18 +12,20 @@ body {
     padding: 0;
 }
 
-.container {
+.container
+{
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #00ff04be;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px 0;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-bottom: 20px;
 }
 
@@ -32,10 +35,10 @@ h1 {
 }
 
 #game-section {
-    background-color: #ffffff;
+    background-color: #0fb0d8b4;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(140, 16, 16, 0.1);
 }
 
 #level-info {
@@ -60,21 +63,39 @@ h1 {
     padding: 10px;
     font-size: 1.2em;
     cursor: pointer;
-    background-color: #2196F3;
+    background-color: orange;
     color: white;
     border: none;
     border-radius: 5px;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 #options button:hover {
-    background-color: #1976D2;
+    background-color: rgba(224, 86, 12, 0.695);
+}
+
+#options button.correct {
+    background-color: #4CAF50 !important;
+    color: white;
+}
+
+#options button.incorrect {
+    background-color: #d32f2fd1 !important;
+    color: white;
 }
 
 #feedback {
     font-size: 1.2em;
     margin-top: 20px;
     font-weight: bold;
+    text-align: center;
+}
+
+#restart {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
     text-align: center;
 }
 

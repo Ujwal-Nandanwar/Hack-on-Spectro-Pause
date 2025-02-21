@@ -10,21 +10,25 @@ const questions = [
     { question: "What is 9 + 10?", answer: 19 }
 ];
 
-function generateQuestion() {
+function generateQuestion()
+{
     const questionData = questions[Math.floor(Math.random() * questions.length)];
     currentQuestion = questionData;
     document.getElementById('question').innerText = questionData.question;
     generateOptions(questionData.answer);
 }
 
-function generateOptions(correctAnswer) {
+function generateOptions(correctAnswer)
+{
     let options = new Set();
     options.add(correctAnswer);
 
-    while (options.size < 4) {
+    while (options.size < 4)
+    {
         let randomOffset = Math.floor(Math.random() * 10) - 5;
         let incorrectAnswer = correctAnswer + randomOffset;
-        if (incorrectAnswer !== correctAnswer && incorrectAnswer >= 0) {
+        if (incorrectAnswer !== correctAnswer && incorrectAnswer >= 0)
+        {
             options.add(incorrectAnswer);
         }
     }
@@ -33,50 +37,84 @@ function generateOptions(correctAnswer) {
     let optionsDiv = document.getElementById('options');
     optionsDiv.innerHTML = '';
 
-    optionsArray.forEach(option => {
+    optionsArray.forEach(option =>
+    {
         let button = document.createElement('button');
         button.innerText = option;
-        button.onclick = () => checkAnswer(option);
+        button.onclick = () => checkAnswer(button, option);
         optionsDiv.appendChild(button);
     });
 }
 
-function checkAnswer(selectedAnswer) {
-    if (selectedAnswer === currentQuestion.answer)
+function checkAnswer(button, selectedAnswer)
+{
+    if (selectedAnswer === currentQuestion.answer) 
     {
         xp += 10;
+        button.classList.add('correct');
         document.getElementById('feedback').innerText = "Correct! Well done.";
+        setTimeout(() =>
+        {
+            document.getElementById('feedback').innerText = "";
+        }, 1000);
         document.getElementById('reward-section').innerText = "You've earned 10 XP!";
+        setTimeout(() =>
+        {
+            document.getElementById('reward-section').innerText = "";
+        }, 1000);
         document.getElementById('xp').innerText = xp;
         checkLevelUp();
     }
-    else 
+    else
     {
+        button.classList.add('incorrect');
         document.getElementById('feedback').innerText = "Oops! Try again.";
-
-        if(chances === 0)
+        setTimeout(() =>
         {
-            xp=0;
-            level=1;
-            document.getElementById('xp').innerText=xp;
-            document.getElementById('level').innertext=level;
+            document.getElementById('feedback').innerText = "";
+        }, 1000);
+
+        if (chances === 1)
+        {
+            xp = 0;
+            level = 1;
+            chances = 3;
+            document.getElementById('xp').innerText = xp;
+            document.getElementById('level').innerText = level;
+            document.getElementById('chances').innerText = chances;
+            document.getElementById('restart').innerText = "RESTART";
+            setTimeout(() =>
+            {
+                document.getElementById('restart').innerText = "";
+            }, 1000);
+            
         }
         else
         {
-            chances = chances - 1;
-            document.getElementById('reward-section').innerText = chances+" chances left";
+            chances--;
+            document.getElementById('reward-section').innerText = chances + " chances left";
             document.getElementById('chances').innerText = chances;
+            setTimeout(() =>
+            {
+                document.getElementById('reward-section').innerText = "";
+            }, 1000);
         }
     }
-    generateQuestion();
+
+    // Disable all buttons after selection
+    document.querySelectorAll('#options button').forEach(btn => btn.disabled = true);
+
+    setTimeout(generateQuestion, 1000);
 }
 
-function checkLevelUp() {
-    if (xp >= level * 30) {
+function checkLevelUp()
+{
+    if (xp >= level * 30)
+    {
         level++;
-        xp=0;
-        document.getElementById('xp').innerText= xp;
+        xp = 0;
         document.getElementById('level').innerText = level;
+        document.getElementById('xp').innerText = xp;
         document.getElementById('reward-section').innerText = `Congratulations! You've leveled up to Level ${level}!`;
     }
 }
