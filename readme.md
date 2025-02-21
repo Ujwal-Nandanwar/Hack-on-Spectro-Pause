@@ -20,17 +20,17 @@ An interactive web app designed to make learning math fun and engaging! This app
 ## ⚙️ Installation and Setup:  
 1. Clone the repository:  
     ```bash
-    git clone https://github.com/your-username/math-quiz-app.git
+    git clone https://github.com/Ujwal-Nandanwar/Hack-on-Spectro-Pause
     ```
 2. Navigate to the project directory:  
     ```bash
-    cd math-quiz-app
+    cd MathQuest
     ```
 3. Install necessary packages using the package manager:  
     ```bash
     npm install
     ```
-4. Open `index.html` in your preferred browser to run the app.  
+4. Open `MathQuest` in your file manager. After downlaoding the package, open "MathQuest" web Application.
 
 ## 🎮 How to Play:  
 1. Start the quiz and answer the questions displayed.  
