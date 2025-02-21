@@ -20,7 +20,8 @@ body
 
 }
 
-header {
+header
+{
     background-color: #00ff04be;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -29,77 +30,89 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
+h1
+{
     margin: 0;
     font-size: 2.5em;
 }
 
-#game-section {
+#game-section
+{
     background-color: #0fb0d8b4;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(140, 16, 16, 0.1);
 }
 
-#level-info {
+#level-info
+{
     margin-bottom: 20px;
 }
 
-#question-section p {
+#question-section p
+{
     font-size: 1.5em;
     text-align: center;
 }
 
-#options {
+#options
+{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-#options button {
+#options button
+{
     display: block;
     width: 80%;
     padding: 10px;
     font-size: 1.2em;
     cursor: pointer;
     background-color: orange;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s ease;
 }
 
-#options button:hover {
+#options button:hover
+{
     background-color: rgba(224, 86, 12, 0.695);
 }
 
-#options button.correct {
+#options button.correct
+{
     background-color: #4CAF50 !important;
     color: white;
 }
 
-#options button.incorrect {
+#options button.incorrect
+{
     background-color: #d32f2fd1 !important;
     color: white;
 }
 
-#feedback {
+#feedback
+{
     font-size: 1.2em;
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
 }
 
-#restart {
+#restart
+{
     margin-top: 20px;
     font-size: 1.2em;
     color: green;
     text-align: center;
 }
 
-#reward-section {
+#reward-section
+{
     margin-top: 20px;
     font-size: 1.2em;
     color: gold;
